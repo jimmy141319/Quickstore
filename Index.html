@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>QuickStore</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f5f5;
+padding:40px;
+}
+
+.container{
+display:flex;
+gap:40px;
+}
+
+.form{
+width:350px;
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+.preview{
+flex:1;
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-bottom:10px;
+}
+
+button{
+background:black;
+color:white;
+padding:12px;
+border:none;
+width:100%;
+cursor:pointer;
+}
+
+.product{
+margin-top:20px;
+padding:20px;
+border:1px solid #ddd;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>QuickStore Builder</h1>
+
+<div class="container">
+
+<div class="form">
+
+<input id="name" placeholder="Store Name">
+
+<input id="product" placeholder="Product Name">
+
+<input id="price" placeholder="Price">
+
+<textarea id="desc" placeholder="Product Description"></textarea>
+
+<input id="contact" placeholder="WhatsApp / LINE link">
+
+<button onclick="generate()">Generate Store</button>
+
+</div>
+
+<div class="preview">
+
+<div id="store">
+
+<h2>Store Preview</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function generate(){
+
+let name=document.getElementById("name").value
+let product=document.getElementById("product").value
+let price=document.getElementById("price").value
+let desc=document.getElementById("desc").value
+let contact=document.getElementById("contact").value
+
+document.getElementById("store").innerHTML=`
+
+<h1>${name}</h1>
+
+<div class="product">
+
+<h2>${product}</h2>
+
+<h3>${price}</h3>
+
+<p>${desc}</p>
+
+<a href="${contact}">
+<button>Order Now</button>
+</a>
+
+</div>
+
+`
+
+}
+
+</script>
+
+</body>
+</html>
